@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deccan Crunch | Order Online</title>
+<style>
+:root{--red:#c9252b;--dark:#171717;--cream:#fff8ef;--gold:#f3bd4b}*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:#211f1d}
+header{background:var(--dark);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:2}
+.logo{font-weight:900;font-size:1.4rem;letter-spacing:1px}.logo span{color:var(--gold)}nav a{color:white;text-decoration:none;margin-left:15px}
+.hero{padding:58px 6%;background:linear-gradient(115deg,#171717,#49302a 65%,#7b1e20);color:white}.hero small{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:bold}
+h1{font-size:clamp(2.5rem,7vw,4.7rem);line-height:1.02;margin:14px 0}.hero p{max-width:560px;line-height:1.6;color:#f5e9df}
+.btn{display:inline-block;background:var(--red);color:white;padding:13px 19px;border:0;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer}.gold{background:var(--gold);color:#211f1d}
+section{padding:42px 5%}.title{text-align:center;font-size:2rem;margin:0 0 8px}.sub{text-align:center;color:#6c625b;margin:0 0 25px}
+.layout{max-width:1180px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:15px}
+.card,.panel{background:white;border:1px solid #eee;border-radius:13px;padding:17px;box-shadow:0 4px 16px #00000009}
+.card h3{margin:0 0 7px;font-size:1.06rem}.card p{margin:0 0 13px;color:#6c625b;font-size:.9rem;line-height:1.4}
+.price{color:var(--red);font-weight:900;font-size:1.08rem}.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}
+.add{background:var(--dark);color:white;border:0;border-radius:7px;padding:9px 13px;font-weight:bold;cursor:pointer}
+.panel{position:sticky;top:82px}.panel h2{margin:0 0 12px}.cart-empty,.hint{color:#6c625b;font-size:.86rem;line-height:1.45}
+.cart-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee;padding:10px 0;font-size:.9rem}
+.qty{display:flex;align-items:center;gap:7px;white-space:nowrap}.qty button{border:0;border-radius:5px;background:#eee;padding:3px 8px;cursor:pointer}
+.total{display:flex;justify-content:space-between;font-weight:900;font-size:1.12rem;margin:15px 0}
+label{display:block;font-size:.88rem;font-weight:bold;margin:12px 0 5px}input,textarea{width:100%;padding:11px;border:1px solid #d8d0c8;border-radius:7px;font:inherit}textarea{min-height:62px}
+.radio{display:flex;gap:15px;flex-wrap:wrap}.radio label{font-weight:normal}.radio input{width:auto}
+.checkout{width:100%;margin-top:12px}.notice{max-width:950px;margin:20px auto 0;padding:12px 15px;background:#fff0cc;border-left:4px solid var(--gold);font-size:.88rem;line-height:1.5}
+footer{background:#111;color:#ddd;text-align:center;padding:22px;font-size:.88rem;line-height:1.6}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.panel{position:static;order:-1}}@media(max-width:560px){header{flex-direction:column;align-items:flex-start}nav a{margin:0 14px 0 0}.hero{padding:48px 5%}section{padding:34px 4%}}
+</style></head><body>
+<header><div class="logo">DECCAN <span>CRUNCH</span></div><nav><a href="#menu">Menu</a><a href="#about">About</a><a href="#order">Your order</a></nav></header>
+<main>
+<section class="hero"><small>Home-based cloud kitchen · Balapur, Hyderabad</small><h1>Your Cravings.<br><span style="color:#f3bd4b">Our Crunch.</span></h1>
+<p>Burgers, crispy chicken, golden fries and flavour-packed wraps. Choose your favourites and send your order directly to us on WhatsApp.</p>
+<a class="btn gold" href="#menu">Explore menu</a> <a class="btn" href="#order">Build your order</a></section>
+<section id="menu"><h2 class="title">Our Menu</h2><p class="sub">Tap Add to build your basket. Prices are provisional; confirm before publishing.</p>
+<div class="layout"><div class="grid" id="products"></div><aside class="panel" id="order"><h2>Your basket</h2><div id="cartItems" class="cart-empty">Your basket is empty. Add something delicious!</div>
+<div class="total"><span>Subtotal</span><span id="subtotal">₹0</span></div><p class="hint">Delivery charges, if any, will be confirmed on WhatsApp. This page does not collect online payment.</p>
+<form id="checkoutForm"><label for="customer">Your name *</label><input id="customer" required maxlength="60" placeholder="Enter your name">
+<label for="phone">Mobile number *</label><input id="phone" required inputmode="tel" pattern="[0-9 +()-]{10,16}" placeholder="Your contact number">
+<label>Fulfilment *</label><div class="radio"><label><input type="radio" name="fulfilment" value="Delivery" checked> Delivery</label><label><input type="radio" name="fulfilment" value="Pickup"> Pickup</label></div>
+<div id="addressWrap"><label for="address">Delivery address *</label><textarea id="address" placeholder="Flat/house, building, street, area, landmark"></textarea></div>
+<label for="notes">Order notes (optional)</label><textarea id="notes" placeholder="Spice preference, instructions, etc."></textarea>
+<button class="btn checkout" type="submit">Send order on WhatsApp</button></form>
+<p class="hint">WhatsApp opens with your order details. Review and press Send to place the order.</p></aside></div>
+<div class="notice"><b>Before launch:</b> Replace the sample WhatsApp number in the code, verify prices and availability, and confirm required food-business permissions.</div></section>
+<section id="about"><h2 class="title">About Deccan Crunch</h2><p class="sub">Deccan-inspired flavour. Fast-food favourites. Made to order.</p>
+<div class="grid"><div class="card"><h3>Made to order</h3><p>We prepare accepted orders fresh, subject to availability.</p></div><div class="card"><h3>Local service</h3><p>Based in Balapur, Hyderabad. Confirm delivery coverage and charges before ordering.</p></div><div class="card"><h3>Easy ordering</h3><p>Build your basket here and send your order directly through WhatsApp.</p></div></div></section>
+</main><footer>© <span id="year"></span> Deccan Crunch · Balapur, Hyderabad<br>Sample ordering website. Confirm prices, contact details and operating permissions before launch.</footer>
+<script>
+/* Replace with country code + number, digits only. Example: 919876543210 */
+const WHATSAPP_NUMBER="91XXXXXXXXXX";
+const products=[
+{id:"cb",name:"Crispy Chicken Burger",desc:"Crunchy chicken patty, fresh toppings and signature sauce.",price:179},
+{id:"sb",name:"Spicy Chicken Burger",desc:"A spicy chicken burger with a flavourful sauce.",price:199},
+{id:"fr",name:"French Fries",desc:"Golden, crisp fries.",price:99},
+{id:"pf",name:"Peri Peri Fries",desc:"Fries tossed with peri-peri seasoning.",price:119},
+{id:"ng",name:"Chicken Nuggets · 6 pcs",desc:"Crispy bite-sized chicken nuggets.",price:129},
+{id:"bc",name:"Broasted Chicken · 2 pcs",desc:"Two pieces of seasoned crispy chicken.",price:199},
+{id:"cw",name:"Chicken Wrap",desc:"Chicken, vegetables and creamy sauce in a wrap.",price:159},
+{id:"combo",name:"Burger + Fries Combo",desc:"A chicken burger served with fries.",price:249}];
+const cart={};const money=n=>"₹"+n.toLocaleString("en-IN");const root=document.getElementById("products");
+products.forEach(p=>{const el=document.createElement("article");el.className="card";el.innerHTML=`<h3>${p.name}</h3><p>${p.desc}</p><div class="card-bottom"><span class="price">${money(p.price)}</span><button class="add" type="button" data-id="${p.id}">+ Add</button></div>`;root.appendChild(el)});
+root.addEventListener("click",e=>{const id=e.target.dataset.id;if(!id)return;cart[id]=(cart[id]||0)+1;renderCart()});
+function renderCart(){const el=document.getElementById("cartItems"),chosen=products.filter(p=>cart[p.id]);el.innerHTML=chosen.length?chosen.map(p=>`<div class="cart-row"><span>${p.name}<br><b>${money(p.price*cart[p.id])}</b></span><span class="qty"><button type="button" data-action="minus" data-id="${p.id}">−</button>${cart[p.id]}<button type="button" data-action="plus" data-id="${p.id}">+</button></span></div>`).join(""):'<span class="cart-empty">Your basket is empty. Add something delicious!</span>';document.getElementById("subtotal").textContent=money(chosen.reduce((s,p)=>s+p.price*cart[p.id],0))}
+document.getElementById("cartItems").addEventListener("click",e=>{const id=e.target.dataset.id,a=e.target.dataset.action;if(!id||!a)return;if(a==="plus")cart[id]++;else if(a==="minus"){cart[id]--;if(cart[id]<=0)delete cart[id]}renderCart()});
+document.querySelectorAll('input[name="fulfilment"]').forEach(x=>x.addEventListener("change",()=>{const delivery=document.querySelector('input[name="fulfilment"]:checked').value==="Delivery";document.getElementById("addressWrap").style.display=delivery?"block":"none";document.getElementById("address").required=delivery}));
+document.getElementById("address").required=true;
+document.getElementById("checkoutForm").addEventListener("submit",e=>{e.preventDefault();const chosen=products.filter(p=>cart[p.id]);if(!chosen.length){alert("Please add at least one item.");return}if(WHATSAPP_NUMBER.includes("X")){alert("Please replace the sample WhatsApp number in the website code before using checkout.");return}
+const name=document.getElementById("customer").value.trim(),phone=document.getElementById("phone").value.trim(),type=document.querySelector('input[name="fulfilment"]:checked').value,address=type==="Delivery"?document.getElementById("address").value.trim():"Customer will collect (pickup)",notes=document.getElementById("notes").value.trim(),total=chosen.reduce((s,p)=>s+p.price*cart[p.id],0);
+const lines=chosen.map(p=>`${p.name} x ${cart[p.id]} = ${money(p.price*cart[p.id])}`);const message=["Hello Deccan Crunch! I'd like to place an order:","",...lines,"",`Subtotal: ${money(total)}`,"Delivery charge: To be confirmed",`Name: ${name}`,`Customer mobile: ${phone}`,`Order type: ${type}`,`Address: ${address}`,`Notes: ${notes||"None"}`,"","Please confirm availability, final total and estimated preparation/delivery time."].join("\n");
+window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,"_blank","noopener")});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script></body></html>
